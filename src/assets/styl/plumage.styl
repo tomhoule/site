@@ -14,6 +14,7 @@
 //
 // Base
 //
+$brand-main             = #9d58e2
 $brand-grey             = #444
 $brand-grey-light       = #8c919b
 
@@ -31,6 +32,9 @@ $font-size-h6           ?= ceil(($font-size-base * 0.85))
 $line-height-base       ?= 1.428571429
 $line-height-computed   ?= floor(($font-size-base * $line-height-base))
 
+$padding-base-vertical   ?= 12px
+$padding-base-horizontal ?= 32px
+
 
 body
     font-size: $font-size-base
@@ -44,6 +48,7 @@ h1, h2, h3, h4, h5,
     font-family: 'Advent Pro', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
     font-weight: 400
     margin-top: 0
+    letter-spacing: 0.05em
 
 h1, .h1
     font-size: $font-size-h1
@@ -62,6 +67,41 @@ h5, .h5
 
 
 //
+// Buttons
+//
+.btn
+    display: inline-block
+    margin-bottom: 0
+    text-align: center
+    vertical-align: middle
+    touch-action: manipulation
+    cursor: pointer
+    background-image: none
+    border: 1px solid transparent
+    white-space: nowrap
+    user-select: none
+    text-decoration: none
+
+    // styling
+    padding: $padding-base-vertical $padding-base-horizontal
+    font-size: $font-size-base
+    line-height: $line-height-base
+    border-radius: 0
+    color: $brand-grey-light
+    border: 2px solid $brand-grey-light
+    font-family: 'Advent Pro', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
+    font-weight: 400
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    transition: all .2s ease-in-out
+
+    &:hover,
+    &:focus
+        background-color: $brand-grey-light
+        color: #fff
+
+
+//
 // Layout
 //
 .container
@@ -70,8 +110,7 @@ h5, .h5
 .row
     max-width: 640px
     margin: 0 auto
-    padding-left: 10%
-    padding-right: 10%
+    padding: 5% 10%
 
 
 //
@@ -87,3 +126,10 @@ h5, .h5
     padding-top: $line-height-computed
 
 //.hero-tagline
+
+
+//
+// Newsletter
+//
+.newsletter
+    background-color: $brand-main
