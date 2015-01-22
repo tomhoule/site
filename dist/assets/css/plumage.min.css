@@ -560,4 +560,4 @@ tbody, caption {
           font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
   /* 2. */ }
 
-.main{max-width:640px;margin:0 auto;padding-left:10%;padding-right:10%}
+.container{clear:both}.row{max-width:640px;margin:0 auto;padding-left:10%;padding-right:10%}
