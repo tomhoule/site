@@ -1,5 +1,5 @@
 {
-  "name": "plumage-landing",
+  "name": "plumage-site",
   "version": "0.1.0",
   "dependencies": {
     "normalize-css": ">=3.0.1",

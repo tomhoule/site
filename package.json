@@ -1,5 +1,5 @@
 {
-  "name": "plumage-landing",
+  "name": "plumage-site",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "description": "plumage landing page",
   "version": "0.1.0",
@@ -22,6 +22,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:kremalicious/plumage-site.git"
+    "url": "git@github.com:plumageio/site.git"
   }
 }
