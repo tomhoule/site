@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     'include css': true
                 },
                 files: {
-                    'dist/assets/css/plumage.css': 'src/assets/styl/plumage.styl'
+                    'dist/assets/css/plumage.min.css': 'src/assets/styl/plumage.styl'
                 }
             }
         },
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                     banner: '/* plumage landing page | Author: Matthias Kretschmann <m@kretschmann.io> | © 2015 plumage */'
                 },
                 files: {
-                    'dist/assets/css/plumage.css': ['dist/assets/css/plumage.css']
+                    'dist/assets/css/plumage.min.css': ['dist/assets/css/plumage.min.css']
                 }
             }
         },
