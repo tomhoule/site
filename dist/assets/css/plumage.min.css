@@ -560,4 +560,4 @@ tbody, caption {
           font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
   /* 2. */ }
 
-.container{clear:both}.row{max-width:640px;margin:0 auto;padding-left:10%;padding-right:10%}
+body{font-size:16px;font-family:'Lato',Arial,Verdana,'Helvetica Neue',Helvetica,sans-serif;font-weight:300;line-height:1.428571429;color:#444}h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{font-family:'Advent Pro',Arial,Verdana,'Helvetica Neue',Helvetica,sans-serif;font-weight:400;margin-top:0}h1,.h1{font-size:41px}h2,.h2{font-size:34px}h3,.h3{font-size:28px}h4,.h4{font-size:20px}h5,.h5{font-size:16px}.container{clear:both}.row{max-width:640px;margin:0 auto;padding-left:10%;padding-right:10%}.hero{background-image:url("http://placekitten.com/1000/300");-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;color:#fff !important;height:400px}.hero-title{padding-top:22px}

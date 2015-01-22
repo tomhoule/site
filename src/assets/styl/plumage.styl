@@ -11,7 +11,59 @@
 // Nib Nib
 @import 'nib'
 
+//
+// Base
+//
+$brand-grey             = #444
+$brand-grey-light       = #8c919b
 
+$font-size-base         ?= 16px
+$font-size-large        ?= ceil(($font-size-base * 1.25))
+$font-size-small        ?= ceil(($font-size-base * 0.85))
+
+$font-size-h1           ?= floor(($font-size-base * 2.6))
+$font-size-h2           ?= floor(($font-size-base * 2.15))
+$font-size-h3           ?= ceil(($font-size-base * 1.7))
+$font-size-h4           ?= ceil(($font-size-base * 1.25))
+$font-size-h5           ?= $font-size-base
+$font-size-h6           ?= ceil(($font-size-base * 0.85))
+
+$line-height-base       ?= 1.428571429
+$line-height-computed   ?= floor(($font-size-base * $line-height-base))
+
+
+body
+    font-size: $font-size-base
+    font-family: 'Lato', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
+    font-weight: 300
+    line-height: $line-height-base
+    color: $brand-grey
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5
+    font-family: 'Advent Pro', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
+    font-weight: 400
+    margin-top: 0
+
+h1, .h1
+    font-size: $font-size-h1
+
+h2, .h2
+    font-size: $font-size-h2
+
+h3, .h3
+    font-size: $font-size-h3
+
+h4, .h4
+    font-size: $font-size-h4
+
+h5, .h5
+    font-size: $font-size-h5
+
+
+//
+// Layout
+//
 .container
     clear: both
 
@@ -20,3 +72,18 @@
     margin: 0 auto
     padding-left: 10%
     padding-right: 10%
+
+
+//
+// Hero
+//
+.hero
+    background-image: url('http://placekitten.com/1000/300')
+    background-size: cover
+    color: #fff !important
+    height: 400px
+
+.hero-title
+    padding-top: $line-height-computed
+
+//.hero-tagline
