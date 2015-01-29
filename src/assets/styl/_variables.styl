@@ -1,8 +1,27 @@
+//
+// Colors
+//
+
 $brand-purple           = #9d58e2
 $brand-green            = #6ef8ba
 $brand-grey             = #444
 $brand-grey-light       = #8c919b
 
+
+//
+// Scaffolding
+//
+$body-bg                ?= #fff
+$text-color             ?= $brand-grey-light
+
+$link-color             ?= $brand-purple
+$link-hover-color       ?= darken($link-color, 15%)
+$link-hover-decoration  ?= none
+
+
+//
+// Typography
+//
 $font-size-base         ?= 16px
 $font-size-large        ?= ceil(($font-size-base * 1.25))
 $font-size-small        ?= ceil(($font-size-base * 0.85))
@@ -16,11 +35,81 @@ $font-size-h6           ?= ceil(($font-size-base * 0.85))
 
 $font-family-base       ?= 'Lato', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
 $font-weight-base       ?= 300
-$font-family-headings   ?= 'Advent Pro', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
-$font-weight-headings   ?= 400
 
 $line-height-base       ?= 1.428571429
 $line-height-computed   ?= floor(($font-size-base * $line-height-base))
 
-$padding-base-vertical   ?= 12px
-$padding-base-horizontal ?= 32px
+$headings-font-family   ?= 'Advent Pro', Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif
+$headings-font-weight   ?= 500
+$headings-line-height   ?= 1.1
+$headings-color         ?= inherit
+
+
+//
+// Components
+//
+$padding-base-vertical ?=    6px
+$padding-base-horizontal ?=  12px
+
+$padding-large-vertical ?=   10px
+$padding-large-horizontal ?= 16px
+
+$padding-small-vertical ?=   5px
+$padding-small-horizontal ?= 10px
+
+$padding-xs-vertical ?=      1px
+$padding-xs-horizontal ?=    5px
+
+$line-height-large ?=        1.3333333 // extra decimals for Win 8.1 Chrome
+$line-height-small ?=        1.5
+
+$border-radius-base ?=       0
+$border-radius-large ?=      0
+$border-radius-small ?=      0
+
+
+//
+// Media queries breakpoints
+//
+$screen-sm-min              ?= 480px
+$screen-md-min              ?= 768px
+$screen-lg-min              ?= 1024px
+
+// So media queries don't overlap when required
+$screen-xs-max              ?= ($screen-sm-min - 1)
+$screen-sm-max              ?= ($screen-md-min - 1)
+$screen-md-max              ?= ($screen-lg-min - 1)
+
+// Media Query shortcuts
+$screen-sm ?= 'only screen and (min-width: ' + $screen-sm-min + ')'
+$screen-md ?= 'only screen and (min-width: ' + $screen-md-min + ')'
+$screen-lg ?= 'only screen and (min-width: ' + $screen-lg-min + ')'
+
+//
+// Container max sizes
+//
+$container-sm               ?= 400px
+$container-md               ?= 800px
+$container-lg               ?= 1100px
+
+
+//
+// Forms
+//
+$input-color                ?= $brand-grey
+$input-border-radius        ?= 2px
+$input-border-radius-large  ?= 0
+$input-border-radius-small  ?= 0
+
+$input-border-focus         ?= #66afe9
+$input-color-placeholder    ?= #999
+
+$input-height-base          ?= ($line-height-computed + ($padding-base-vertical * 2) + 2)
+$input-height-large         ?= (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2)
+$input-height-small         ?= (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2)
+
+$legend-color               ?= $gray-dark
+$legend-border-color        ?= #e5e5e5
+
+$input-group-addon-bg       ?= $gray-lighter
+$input-group-addon-border-color ?= $input-border

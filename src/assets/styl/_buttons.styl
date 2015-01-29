@@ -9,7 +9,7 @@
     touch-action: manipulation
     cursor: pointer
     background-image: none
-    border: 1px solid transparent
+    border: 2px solid transparent
     white-space: nowrap
     user-select: none
     text-decoration: none
@@ -18,16 +18,37 @@
     padding: $padding-base-vertical $padding-base-horizontal
     font-size: $font-size-base
     line-height: $line-height-base
-    border-radius: 0
+    border-radius: $input-border-radius
     color: $brand-grey-light
-    border: 2px solid $brand-grey-light
-    font-family: $font-family-headings
-    font-weight: $font-weight-headings
+    border-color: $brand-grey-light
+    font-family: $headings-font-family
+    font-weight: $headings-font-weight
     letter-spacing: 0.05em
     text-transform: uppercase
     transition: all .2s ease-in-out
+    background-color: transparent
+
+    @media only screen and (max-width: $screen-sm-max)
+        display: block
+        width: 100%
+        margin-top: ($line-height-computed/2)
 
     &:hover,
     &:focus
         background-color: $brand-grey-light
         color: #fff
+        box-shadow: none
+
+//
+// Button Sizes
+//
+.btn-lg
+    // line-height ensure even-numbered height of button next to large input
+    button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large)
+
+.btn-sm
+    // line-height ensure proper height of button next to small input
+    button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small)
+
+.btn-xs
+    button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small)

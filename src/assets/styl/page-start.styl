@@ -1,5 +1,17 @@
 
 //
+// All the sections
+//
+.section
+    padding-top: $line-height-computed
+    padding-bottom: $line-height-computed
+
+    @media $screen-sm
+        padding-top: ($line-height-computed * 2)
+        padding-bottom: ($line-height-computed * 2)
+
+
+//
 // Hero
 //
 .hero
@@ -9,6 +21,7 @@
     height: 500px
 
 .hero-title
+    margin-top: 0
     padding-top: $line-height-computed
 
 //.hero-tagline
@@ -19,3 +32,24 @@
 //
 .newsletter
     background-color: $brand-green
+    @extend .text-center
+
+    h1, p
+        color: darken($brand-green, 70%)
+        margin-top: 0
+
+
+//
+// About
+//
+.about
+    @extend .text-center
+
+
+//
+// Footer
+//
+.footer
+    .row
+        border-top: 2px solid lighten($brand-grey-light, 50%)
+        padding-top: $line-height-computed
