@@ -31,6 +31,7 @@
 // Hero
 //
 .hero
+    @extend .text-center
     background: transparent url('../img/IMG_2869.JPG') center bottom
     background-size: cover
     height: 100vh
@@ -50,7 +51,7 @@
 
 .hero-title,
 .hero-tagline
-    @extend .text-center
+.hero-btn
     color: #fff
     text-shadow: 1px 1px 1px $brand-dark
     position: relative
@@ -66,7 +67,10 @@
 
 .hero-tagline
     font-size: $font-size-large
-    margin-bottom: ($line-height-computed*4)
+    margin-bottom: ($line-height-computed*2)
+
+.hero-btn
+    @extend .btn-white
 
 
 //
@@ -76,17 +80,29 @@
     @extend .text-center
     background: $brand-green
     color: $brand-dark
+    height: 50vh
+    padding-top: 17.5vh
 
     p
         margin-bottom: 0
+
+.icon-circled
+    width: 48px
+    height: 48px
+    display: block
+    background: $brand-dark
+    border-radius: 100%
+    margin: 0 auto ($line-height-computed/2) auto
 
 
 //
 // Newsletter
 //
 .newsletter
-    background-color: $brand-dark
     @extend .text-center
+    background-color: $brand-dark
+    height: 50vh
+    padding-top: 17.5vh
 
     .newsletter-title,
     .newsletter-text,
@@ -96,11 +112,7 @@
         margin-top: 0
 
     .btn
-        border-color: #fff
-
-        &:hover
-            background-color: #fff
-            color: $brand-dark
+        @extend .btn-white
 
 .newsletter-textinput
     border: none
@@ -123,7 +135,8 @@
 //
 .about
     @extend .text-center
-
+    height: 100vh
+    padding-top: 25vh
 
 
 //
