@@ -10,6 +10,22 @@
         padding-top: ($line-height-computed * 2)
         padding-bottom: ($line-height-computed * 2)
 
+.section-title
+    @extend .h3
+    margin-bottom: ($line-height-computed*1.85)
+    position: relative
+
+    &:after
+        content: ""
+        width: 2em
+        height: 2px
+        display: block
+        position: absolute
+        left: 50%
+        margin-left: -1em
+        bottom: -($line-height-computed)
+        background: $brand-grey
+
 
 //
 // Hero
@@ -17,7 +33,6 @@
 .hero
     background: transparent url('../img/IMG_2869.JPG') center bottom
     background-size: cover
-    color: #fff !important
     height: 100vh
     position: relative
 
@@ -35,21 +50,42 @@
 
 .hero-title,
 .hero-tagline
+    @extend .text-center
+    color: #fff
+    text-shadow: 1px 1px 1px $brand-dark
     position: relative
     z-index: 5
 
 .hero-title
+    @extend .section-title
     margin-top: 0
     padding-top: 35vh
 
+    &:after
+        background: #fff
 
+.hero-tagline
+    font-size: $font-size-large
+    margin-bottom: ($line-height-computed*4)
+
+
+//
+// Benefits
+//
+.benefits
+    @extend .text-center
+    background: $brand-green
+    color: $brand-dark
+
+    p
+        margin-bottom: 0
 
 
 //
 // Newsletter
 //
 .newsletter
-    background-color: $brand-green
+    background-color: $brand-dark
     @extend .text-center
 
     .newsletter-title,
@@ -64,7 +100,18 @@
 
         &:hover
             background-color: #fff
-            color: $brand-green
+            color: $brand-dark
+
+.newsletter-textinput
+    border: none
+    background-color: $brand-green
+    color: $brand-dark
+    placeholder(color: $brand-dark,)
+    min-width: 320px
+
+    &:focus
+        background-color: $brand-green-light
+
 
 .newsletter-title,
 .newsletter-label
@@ -78,10 +125,10 @@
     @extend .text-center
 
 
+
 //
 // Footer
 //
 .footer
-    .row
-        border-top: 2px solid lighten($brand-grey, 50%)
-        padding-top: $line-height-computed
+    border-top: 2px solid $brand-grey
+    padding-top: ($line-height-computed/2)
