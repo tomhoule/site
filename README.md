@@ -2,6 +2,8 @@
 
 > Landing page for plumage. Splendid.
 
+[ ![Codeship Status for plumageio/site](https://codeship.com/projects/edd5e270-b189-0132-1c49-3edef27c5b65/status?branch=master)](https://codeship.com/projects/69877)
+
 This repository does the following:
 
 1. compiles Stylus files into CSS and minifies it
