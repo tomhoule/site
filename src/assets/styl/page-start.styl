@@ -86,6 +86,7 @@
 
     .lead
         font-size: $font-size-large
+        margin-top: $line-height-computed
         margin-bottom: ($line-height-computed*2)
 
 .benefit
@@ -128,7 +129,7 @@
     border: none
     background-color: $brand-green
     color: $brand-dark
-    placeholder(color: $brand-dark,)
+    placeholder(rgba($brand-dark, 50%))
 
     @media $screen-sm
         min-width: 320px
