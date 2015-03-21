@@ -80,15 +80,24 @@
     @extend .text-center
     background: $brand-green
     color: $brand-dark
-    height: 50vh
-    padding-top: 17.5vh
 
-    p
-        margin-bottom: 0
+    .lead
+        font-size: $font-size-large
+        margin-bottom: ($line-height-computed*2)
+
+.benefit
+    margin-bottom: ($line-height-computed*2)
+
+.benefit-title
+    @extend .h4
+
+.benefit-text
+    text-align: left
+    margin-bottom: 0
 
 .icon-circled
-    width: 48px
-    height: 48px
+    width: 62px
+    height: 62px
     display: block
     background: $brand-dark
     border-radius: 100%
