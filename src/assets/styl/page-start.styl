@@ -60,7 +60,10 @@
 .hero-title
     @extend .section-title
     margin-top: 0
-    padding-top: 35vh
+    padding-top: 20vh
+
+    @media $screen-sm
+        padding-top: 35vh
 
     &:after
         background: #fff
@@ -110,8 +113,6 @@
 .newsletter
     @extend .text-center
     background-color: $brand-dark
-    height: 50vh
-    padding-top: 17.5vh
 
     .newsletter-title,
     .newsletter-text,
@@ -128,7 +129,9 @@
     background-color: $brand-green
     color: $brand-dark
     placeholder(color: $brand-dark,)
-    min-width: 320px
+
+    @media $screen-sm
+        min-width: 320px
 
     &:focus
         background-color: $brand-green-light
@@ -145,7 +148,10 @@
 .about
     @extend .text-center
     height: 100vh
-    padding-top: 25vh
+    padding-top: 15vh
+
+    @media $screen-sm
+        padding-top: 25vh
 
 
 //
