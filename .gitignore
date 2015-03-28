@@ -1,5 +1,6 @@
 bower_components
 node_modules
+dist
 
 # osx noise
 .DS_Store
