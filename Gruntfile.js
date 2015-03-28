@@ -79,6 +79,39 @@ module.exports = function(grunt) {
             }
         },
 
+        // image optimization
+        imagemin: {
+            assets: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/assets/img/',
+                    src: ['**/*.{png,jpg,jpeg,gif}'],
+                    dest: 'dist/assets/img/'
+                }]
+            }
+        },
+
+        // assets versioning
+        rev: {
+            files: {
+                src: [
+                    'dist/assets/{css,js,img,hero,fonts}/*.*'
+                ]
+            }
+        },
+
+        // updating assets paths in html/css
+        usemin: {
+            html: ['dist/**/*.html'],
+            css: ['dist/**/*.css'],
+            js: ['dist/**/*.js'],
+            options: {
+                dirs: 'dist',
+                basedir: 'dist',
+                assetsDirs: ['dist', 'dist/assets/{css,js,img,fonts}']
+            }
+        },
+
         // Watches for changes to css or email templates then runs grunt tasks
         watch: {
             options: {
@@ -118,20 +151,19 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.loadNpmTasks('grunt-contrib-stylus');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    // Load NPM Tasks, smart code stolen from @bluemaex <https://github.com/bluemaex>
+    require('fs').readdirSync('node_modules').filter(function (file) {
+        return file && file.indexOf('grunt-') > -1;
+    }).forEach(function (file) {
+        grunt.loadNpmTasks(file);
+    });
+
     grunt.loadNpmTasks('assemble');
 
     // Default task
     grunt.registerTask('default', [
         'copy',
         'stylus',
-        'uglify',
         'assemble'
     ]);
 
@@ -140,7 +172,6 @@ module.exports = function(grunt) {
         'clean',
         'copy',
         'stylus',
-        'uglify',
         'assemble',
         'connect',
         'watch'
@@ -152,8 +183,10 @@ module.exports = function(grunt) {
         'copy',
         'stylus',
         'cssmin',
-        'uglify',
-        'assemble'
+        'assemble',
+        'imagemin',
+        'rev',
+        'usemin'
     ]);
 
 };
