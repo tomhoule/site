@@ -68,11 +68,13 @@ module.exports = function(grunt) {
         // Assembles html layout
         assemble: {
             options: {
-                layoutdir: 'src/layouts',
+                data: 'src/data/*.{json,yml}',
+                layoutdir: 'src/templates/layouts',
+                partials: ['src/templates/includes/*.hbs'],
                 flatten: true
             },
-            pages: {
-                src: ['src/screens/*.hbs'],
+            site: {
+                src: ['src/templates/pages/*.hbs'],
                 dest: 'dist/'
             }
         },
