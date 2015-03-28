@@ -71,6 +71,9 @@ small,
 .small
     font-size: floor((100% * $font-size-small / $font-size-base))
 
+.large
+    font-size: $font-size-large
+
 // Alignment
 .text-left
     text-align: left
@@ -133,4 +136,5 @@ ol
 // Lead intro text
 //
 .lead
+    @extend .large, .text-center
     margin-bottom: ($line-height-computed*1.5)

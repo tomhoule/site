@@ -34,8 +34,13 @@
     @extend .text-center
     background: transparent url('../img/IMG_2869.JPG') center bottom
     background-size: cover
-    height: 100vh
     position: relative
+    padding-top: ($line-height-computed * 2)
+    padding-bottom: ($line-height-computed * 2)
+
+    @media $screen-sm
+        padding-top: ($line-height-computed * 6)
+        padding-bottom: ($line-height-computed * 6)
 
     // image overlay
     &:before
@@ -60,10 +65,6 @@
 .hero-title
     @extend .section-title
     margin-top: 0
-    padding-top: 20vh
-
-    @media $screen-sm
-        padding-top: 35vh
 
     &:after
         background: #fff
@@ -80,12 +81,10 @@
 // Benefits
 //
 .benefits
-    @extend .text-center
     background: $brand-green
     color: $brand-dark
 
     .lead
-        font-size: $font-size-large
         margin-top: $line-height-computed
         margin-bottom: ($line-height-computed*2)
 
@@ -93,13 +92,13 @@
     margin-bottom: ($line-height-computed*2)
 
 .benefit-title
-    @extend .h4
-    color: lighten($brand-dark, 15%)
+    @extend .h4, .text-center
+    color: lighten($brand-dark, 5%)
     margin-top: $line-height-computed
     margin-bottom: $line-height-computed
 
 .benefit-text
-    color: lighten($brand-dark, 20%)
+    color: lighten($brand-dark, 10%)
     text-align: left
     margin-bottom: 0
 
@@ -168,6 +167,7 @@
 
     svg
         fill: $brand-grey
+        transition: all .2s ease-in-out
 
     &:hover svg
         fill: $link-color
