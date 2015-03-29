@@ -86,10 +86,11 @@
         margin-bottom: ($line-height-computed*2)
 
 .benefit
+    @extend .text-center
     margin-bottom: ($line-height-computed*2)
 
 .benefit-title
-    @extend .h4, .text-center
+    @extend .h4
     color: lighten($brand-dark, 5%)
     margin-top: $line-height-computed
     margin-bottom: $line-height-computed
@@ -98,6 +99,9 @@
     color: lighten($brand-dark, 10%)
     text-align: left
     margin-bottom: 0
+
+.icon-benefit
+    fill: lighten($brand-dark, 5%)
 
 .icon-circled
     width: 62px
