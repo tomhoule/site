@@ -24,6 +24,7 @@ module.exports = function(grunt) {
                     cwd: 'src/',
                     dest: 'dist/',
                     src: [
+                        '.htaccess',
                         'assets/**',
                         '!assets/styl/**'
                     ]

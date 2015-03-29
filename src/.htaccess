@@ -1,0 +1,5 @@
+#Redirect 301 / http://www.plumage.io/magazine/
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^blog/(.*)$ http://www.plumage.io/magazine/$1 [R=301,L]
