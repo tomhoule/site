@@ -96,7 +96,8 @@ module.exports = function(grunt) {
         rev: {
             files: {
                 src: [
-                    'dist/assets/{css,js,img,hero,fonts}/*.*'
+                    'dist/assets/{css,js,img,hero,fonts}/*.*',
+                    '!dist/assets/img/banner.png'
                 ]
             }
         },
