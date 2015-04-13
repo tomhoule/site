@@ -40,25 +40,11 @@ and use the force to rewrite history for pushing back to your remote or feature 
 git push origin my-branch-whatever -f
 ```
 
-## Continuous Deployment
-
-All changes to the master branch will trigger an automatic build & deployment via [Codeship](https://codeship.com/). After successfull build the contents of `/dist` are synced with `rsync` to [Media Temple’s Grid](http://mediatemple.net/webhosting/shared/) with this manual deploy script setup in Codeship:
-
-```
-rsync --recursive --delete --exclude 'magazine' --checksum --verbose -e "ssh" ~/clone/dist/ kremalicious.com@kremalicious.com:/nfs/c08/h04/mnt/126308/domains/plumage.io/html/
-```
-
-If all goes well this is how the auto build & deploy looks like:
-
-![](http://media.tumblr.com/d2cea9bff3b4dcb11d7bc3c9c3a11829/tumblr_inline_njhdq1yXtK1raprkq.gif)
-
-
 ## Prerequisites for Development
 
 - [node.js](http://nodejs.org/)
 - [npm](https://npmjs.org/)
 - [Bower](http://bower.io/)
-
 
 To get all dependencies run:
 ```bash
@@ -66,7 +52,6 @@ npm install
 ```
 
 This will install all required npm packages and bower components in one go.
-
 
 ## Development
 
@@ -80,15 +65,40 @@ The site will open [localhost:1337](http://localhost:1337) automatically in your
 
 Note: The easiest way to get livereload to work is to install the [browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-).
 
-
 ## Build
 
-This will put everything together and output it in the `dist/` folder:
+This will put everything together, minifies & optimizes a bunch of stuff and output it in the `dist/` folder:
 
 ```bash
 grunt build
 ```
 
+This command is setup on Codeship for testing the build.
+
+These are the Grunt tasks being run:
+
+```
+clean
+copy
+stylus
+cssmin
+assemble
+imagemin
+rev
+usemin
+```
+
+## Continuous Deployment
+
+All changes to the master branch will trigger an automatic build & deployment via [Codeship](https://codeship.com/). After successfull build the contents of `/dist` are synced with `rsync` to [Media Temple’s Grid](http://mediatemple.net/webhosting/shared/) with this manual deploy script setup in Codeship:
+
+```
+rsync --recursive --delete --exclude 'magazine' --checksum --verbose -e "ssh" ~/clone/dist/ kremalicious.com@kremalicious.com:/nfs/c08/h04/mnt/126308/domains/plumage.io/html/
+```
+
+If all goes well this is how the auto build & deploy looks like:
+
+![](http://media.tumblr.com/d2cea9bff3b4dcb11d7bc3c9c3a11829/tumblr_inline_njhdq1yXtK1raprkq.gif)
 
 ## Browser support
 
