@@ -34,7 +34,7 @@ or (if your local master is already synchronised with upstream):
 git rebase master
 ```
 
-and use the force to push back to your remote or feature branch:
+and use the force to rewrite history for pushing back to your remote or feature branch:
 
 ```
 git push origin my-branch-whatever -f
