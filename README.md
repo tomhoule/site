@@ -2,7 +2,7 @@
 
 > Landing page for plumage. Splendid.
 
-[ ![Codeship Status for plumageio/site](https://codeship.com/projects/edd5e270-b189-0132-1c49-3edef27c5b65/status?branch=master)](https://codeship.com/projects/69877)
+[ ![GitLab CI Status for plumage/site](https://gitlab.kremalicious.com/plumage/site/badges/master/build.svg)](https://gitlab.kremalicious.com/plumage/site/builds)
 
 This repository does the following:
 
@@ -70,27 +70,12 @@ Note: The easiest way to get livereload to work is to install the [browser exten
 This will put everything together, minifies & optimizes a bunch of stuff and output it in the `dist/` folder:
 
 ```bash
-grunt build
-```
-
-This command is setup on Codeship for testing the build.
-
-These are the Grunt tasks being run:
-
-```
-clean
-copy
-stylus
-cssmin
-assemble
-imagemin
-rev
-usemin
+gulp build
 ```
 
 ## Continuous Deployment
 
-All changes to the master branch will trigger an automatic build & deployment via [Codeship](https://codeship.com/). After successfull build the contents of `/dist` are synced with `rsync` to [Media Temple’s Grid](http://mediatemple.net/webhosting/shared/) with this manual deploy script setup in Codeship:
+All changes to the master branch will trigger an automatic build & deployment via [GitLab](https://git.kremalicious.com/). After successful build the contents of `/dist` are synced with `rsync` to [kretschmann.io server](https://kretschmann.io/) with this manual deploy script setup in GitLab:
 
 ```
 rsync --recursive --delete --exclude 'magazine' --checksum --verbose -e "ssh" ~/clone/dist/ kremalicious.com@kremalicious.com:/nfs/c08/h04/mnt/126308/domains/plumage.io/html/

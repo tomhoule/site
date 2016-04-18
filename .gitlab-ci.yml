@@ -1,0 +1,34 @@
+image: mwallasch/docker-ruby-node:latest
+
+cache:
+    paths:
+    - node_modules/
+
+stages:
+    - build
+    - ssh
+    - deploy
+
+build_job:
+    stage: build
+    artifacts:
+        paths:
+        - dist/
+    script:
+        - npm install -g gulp
+        - npm install
+        - gulp build
+
+deploy_job:
+    stage: deploy
+    only:
+        - master
+    script:
+        - apt-get update -y
+        - 'which ssh-agent || ( apt-get install openssh-client -y )'
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$SSH_PRIVATE_KEY")
+        - mkdir -p ~/.ssh
+        - '[[ -f /.dockerinit ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+        - apt-get install -y rsync
+        - rsync --recursive --delete --exclude 'magazine/' --checksum --verbose -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" $DEPLOY_SRC $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH
