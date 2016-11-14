@@ -42,10 +42,10 @@ This will put everything together, minifies & optimizes a bunch of stuff and out
 gulp build
 ```
 
-## Continuous Deployment
+## Manual Deployment
 
-All changes to the master branch will trigger an automatic build & deployment via [GitLab](https://www.git.berlin/). After successful build the contents of `/dist` are synced with `rsync` to [kretschmann.io server](https://kretschmann.io/).
+Deployment happens through a simple rsync sync:
 
-If all goes well this is how the auto build & deploy looks like:
-
-![](http://media.tumblr.com/d2cea9bff3b4dcb11d7bc3c9c3a11829/tumblr_inline_njhdq1yXtK1raprkq.gif)
+```bash
+sh deploy.sh
+```
