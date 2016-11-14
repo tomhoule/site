@@ -1,4 +1,4 @@
-image: mwallasch/docker-ruby-node:latest
+image: starefossen/ruby-node:latest
 
 cache:
     paths:
