@@ -2,8 +2,6 @@
 
 > Landing page for plumage. Splendid.
 
-[ ![GitLab CI Status for plumage/site](https://www.git.berlin/plumage/site/badges/master/build.svg)](https://www.git.berlin/plumage/site/builds)
-
 This repository does the following:
 
 1. compiles Stylus files into CSS and minifies it
@@ -15,9 +13,9 @@ This repository does the following:
 
 - [node.js](http://nodejs.org/)
 - [npm](https://npmjs.org/)
-- [Bower](http://bower.io/)
 
 To get all dependencies run:
+
 ```bash
 npm install
 ```
@@ -32,7 +30,7 @@ This compiles and builds everything into the `dist/` folder and starts up a watc
 gulp
 ```
 
-The site will open [localhost:1337](http://localhost:1337) automatically in your default browser.
+Open [localhost:1337](http://localhost:1337) in your browser.
 
 ## Build
 
@@ -42,10 +40,21 @@ This will put everything together, minifies & optimizes a bunch of stuff and out
 gulp build
 ```
 
-## Manual Deployment
+## Deployment
 
 Deployment happens through a simple rsync sync:
 
 ```bash
-sh deploy.sh
+./deploy.sh
+```
+
+Requires the following environment variables to be set before executing:
+
+```bash
+DEPLOY_OWNER
+DEPLOY_OWNERGROUP
+DEPLOY_SRC
+DEPLOY_USER
+DEPLOY_SERVER
+DEPLOY_PATH
 ```
