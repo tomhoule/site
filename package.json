@@ -31,5 +31,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:plumageio/site.git"
-  }
+  },
+  "scripts": {
+  "start": "node server.js"
+}
+
 }
