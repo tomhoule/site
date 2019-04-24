@@ -33,6 +33,7 @@
     "url": "git@github.com:plumageio/site.git"
   },
   "scripts": {
+    "build": "gulp build",
     "start": "node server.js"
   }
 }
